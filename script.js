@@ -89,8 +89,8 @@ const getUserCoordinates = () => {
 
             // Entered city coordinates
             fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
-                const cityNameFromCoords = data[0];
-                getWeatherDetails(cityNameFromCoords, latitude, longitude);
+                const { name } = data[0];
+                getWeatherDetails(name, latitude, longitude);
             }).catch(() => { // Error when user denied location permission
                 alert(`An error occurred while fetching the city!`);
             });
@@ -105,3 +105,4 @@ const getUserCoordinates = () => {
 
 searchBtn.addEventListener("click", getCityCoordinates);
 locationBtn.addEventListener("click", getUserCoordinates);
+cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates());
