@@ -89,8 +89,9 @@ const getUserCoordinates = () => {
 
             // Entered city coordinates
             fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
-                console.log(data);
-            }).catch(() => {
+                const cityNameFromCoords = data[0];
+                getWeatherDetails(cityNameFromCoords, latitude, longitude);
+            }).catch(() => { // Error when user denied location permission
                 alert(`An error occurred while fetching the city!`);
             });
         },
