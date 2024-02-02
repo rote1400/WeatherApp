@@ -30,7 +30,7 @@ const createWeatherCard = (cityName, weatherElement, index) => {
 }
 
 const getWeatherDetails = (cityName, lat, lon) => {
-    const WEATHER_API_CALL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${KEY}`;
+    const WEATHER_API_CALL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${KEY}`;
 
     fetch(WEATHER_API_CALL).then(res => res.json()).then(data => {
         // Filter the forecast to get only one forecast per day
@@ -67,7 +67,7 @@ const getCityCoordinates = () => {
         return;
     }
 
-    const GEOCODING = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${KEY}`;
+    const GEOCODING = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${KEY}`;
 
     // Entered city coordinates
     fetch(GEOCODING).then(res => res.json()).then(data => {
@@ -85,7 +85,7 @@ const getUserCoordinates = () => {
     navigator.geolocation.getCurrentPosition(
         position => {
             const { latitude, longitude } = position.coords;
-            const REVERSE_GEOCODING_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${KEY}`;
+            const REVERSE_GEOCODING_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${KEY}`;
 
             // Entered city coordinates
             fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
