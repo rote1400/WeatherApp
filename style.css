@@ -13,7 +13,7 @@ body {
 
 h1 {
     font-size: 1.8rem;
-    background: #f69d19;
+    background: #8b6e43;
     color: #fff;
     padding: 18px 0;
     text-align: center;
@@ -46,7 +46,7 @@ h1 {
     outline: none;
     border: none;
     color: #fff;
-    background: #f69d19;
+    background: #8b6e43;
     border-radius: 15px;
     width: 100%;
     font-size: 1.10rem;
@@ -81,7 +81,7 @@ h1 {
 
 .current-weather {
     color: #fff;
-    background: #f69d19;
+    background: #8b6e43;
     padding: 20px 70px 20px 20px;
     border-radius: 15px;
     display: flex;
@@ -93,7 +93,7 @@ h1 {
 }
 
 .weather-data h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-top: 12px;
 }
