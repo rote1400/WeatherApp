@@ -20,7 +20,7 @@ const createWeatherCard = (cityName, weatherElement, index) => {
                 </div>`;
     } else { // HTML for the forecast weather cards
         return `<li class="card">
-                    <h3>(${weatherElement.dt_txt.split(" ")[0]})</h3>
+                    <h3>${weatherElement.dt_txt.split(" ")[0]}</h3>
                     <img src="https://openweathermap.org/img/wn/${weatherElement.weather[0].icon}@2x.png" alt="weather-icon">
                     <h4>Temp: ${(weatherElement.main.temp - 273.15).toFixed(2)}°C</h4>
                     <h4>Wind: ${weatherElement.wind.speed} M/S</h4>
